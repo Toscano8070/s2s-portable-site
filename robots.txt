@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://toscano8070.github.io/s2s-portable-site/sitemap.xml
