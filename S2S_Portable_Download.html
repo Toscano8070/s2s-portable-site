@@ -498,7 +498,7 @@ S2S_Portable\
 
     <div class="info-box">
         <strong data-i18n="llm_compat_h">&#x2705; Made to work with S2S Portable</strong>
-        <p data-i18n="llm_compat_p">S2S already knows how to load <strong>.gguf</strong> models from its <code>models</code> folder. These three files are <strong>tested formats and naming</strong> that match what the app expects, so you spend less time troubleshooting and more time translating. They represent <strong>today&rsquo;s strongest compact multilingual instruction LLMs</strong> &mdash; ideal when you want fluent, context-aware help in many languages alongside speech translation (reasoning, rephrasing, style tweaks, and similar tasks the main translation stack doesn&rsquo;t cover).</p>
+        <p data-i18n="llm_compat_p">S2S loads these <strong>.gguf</strong> files from the <code>models</code> folder <strong>only</strong> &mdash; put them <strong>directly in that folder</strong> (same level as other loose <code>.gguf</code> files), not inside <code>nllb</code> or any subfolder. These three checkpoints use <strong>tested formats and filenames</strong> the app expects. They are <strong>today&rsquo;s strongest compact multilingual instruction LLMs</strong> &mdash; ideal for fluent, context-aware help in many languages alongside speech translation (reasoning, rephrasing, style tweaks, and tasks beyond the main translation stack).</p>
     </div>
 
     <div class="success-box" style="margin:1.25rem 0;">
@@ -519,10 +519,11 @@ S2S_Portable\
 
     <div class="card">
         <h3 data-i18n="llm_install_h">&#x1F4C2; Installation (takes about a minute)</h3>
-        <p data-i18n="llm_install_p">Unpack the zip, then move <strong>every</strong> <code>.gguf</code> file into your portable app&rsquo;s <code>models</code> directory &mdash; the same place S2S looks when it lists local LLMs. No renaming required if filenames match the list below:</p>
+        <p style="color:var(--accent-secondary);font-weight:700;margin-bottom:0.75rem;" data-i18n="llm_install_highlight">Put the three <code>.gguf</code> files <strong>only</strong> in the <code>models</code> folder &mdash; <strong>not</strong> inside <code>models\nllb</code> or any other subfolder.</p>
+        <p data-i18n="llm_install_p">Unpack the zip and copy each file into <code>S2S_Portable\models\</code> (the <code>models</code> folder next to the app). Do not nest them deeper. Filenames should match exactly; no renaming needed.</p>
         <div class="code-block">
 S2S_Portable\
-  models\
+  models\   &larr; put the .gguf files HERE (this folder only)
     Qwen3.5-0.8B.q8_0.gguf
     Ministral-3-3B-Instruct-2512.Q6_K_H.gguf
     qwen2.5-7b-instruct-q4_k_m.gguf
@@ -804,7 +805,7 @@ EN: {
   llm_title_inner: 'Multilingual LLM Pack (Optional \u2014 Single Download)',
   llm_lead: 'Want the same cutting-edge multilingual models power users run today \u2014 without hunting files across the web? This optional pack gives you <strong>three hand-picked GGUF checkpoints</strong> in <strong>one download</strong>, ready to drop into S2S Portable.',
   llm_compat_h: '\u2705 Made to work with S2S Portable',
-  llm_compat_p: 'S2S already knows how to load <strong>.gguf</strong> models from its <code>models</code> folder. These three files are <strong>tested formats and naming</strong> that match what the app expects, so you spend less time troubleshooting and more time translating. They represent <strong>today\u2019s strongest compact multilingual instruction LLMs</strong> \u2014 ideal when you want fluent, context-aware help in many languages alongside speech translation (reasoning, rephrasing, style tweaks, and similar tasks the main translation stack doesn\u2019t cover).',
+  llm_compat_p: 'S2S loads these <strong>.gguf</strong> files from the <code>models</code> folder <strong>only</strong> \u2014 put them <strong>directly in that folder</strong> (same level as other loose <code>.gguf</code> files), not inside <code>nllb</code> or any subfolder. These three checkpoints use <strong>tested formats and filenames</strong> the app expects. They are <strong>today\u2019s strongest compact multilingual instruction LLMs</strong> \u2014 ideal for fluent, context-aware help in many languages alongside speech translation (reasoning, rephrasing, style tweaks, and tasks beyond the main translation stack).',
   llm_tip_h: '\uD83D\uDCA1 Do I need all three at once?',
   llm_tip_p: '<strong>No.</strong> You get the full trio so you can <strong>choose the best fit for your GPU</strong>: a featherweight option for tight VRAM, a balanced mid-size model, and a larger checkpoint when you want maximum quality. Install all files, then pick the one you want inside S2S \u2014 the others stay on disk for when you upgrade hardware or switch workloads.',
   llm_list_intro: 'What\u2019s inside the archive',
@@ -813,7 +814,8 @@ EN: {
   llm_f3: '<code style="color:var(--accent-secondary);">qwen2.5-7b-instruct-q4_k_m.gguf</code> \u2014 <strong>Heaviest hitter.</strong> Qwen2.5 7B at solid quantization: reach for this when you have headroom and want the richest answers.',
   llm_dl_btn: '\u2B07 Download all 3 LLMs (one archive \u2014 ~8\u201310 GB)',
   llm_install_h: '\uD83D\uDCC2 Installation (takes about a minute)',
-  llm_install_p: 'Unpack the zip, then move <strong>every</strong> <code>.gguf</code> file into your portable app\u2019s <code>models</code> directory \u2014 the same place S2S looks when it lists local LLMs. No renaming required if filenames match the list below:',
+  llm_install_highlight: 'Put the three <code>.gguf</code> files <strong>only</strong> in the <code>models</code> folder \u2014 <strong>not</strong> inside <code>models\\nllb</code> or any other subfolder.',
+  llm_install_p: 'Unpack the zip and copy each file into <code>S2S_Portable\\models\\</code> (the <code>models</code> folder next to the app). Do not nest them deeper. Filenames should match exactly; no renaming needed.',
   llm_install_note: 'If S2S was open, close and reopen it once so the new checkpoints show up in the model picker.',
   llm_lic_note: 'Each weight file remains under its <strong>original open license</strong> (for example Apache&nbsp;2.0 or Mistral\u2019s terms). You are responsible for using them in line with those licenses <strong>and</strong> with your S2S license tier (personal vs commercial). When in doubt, prefer the smaller Qwen checkpoints for experimentation and keep commercial workflows aligned with your agreement.',
   oss_title_inner: 'Open-Source Components &amp; Licenses',
