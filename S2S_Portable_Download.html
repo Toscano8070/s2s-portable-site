@@ -16,8 +16,8 @@
     <meta property="og:site_name" content="S2S Portable">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://toscano8070.github.io/s2s-portable-site/og-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="540">
     <meta property="og:image:alt" content="S2S Portable - Free Offline Speech-to-Speech Translator">
     <meta name="twitter:image" content="https://toscano8070.github.io/s2s-portable-site/og-preview.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -187,6 +187,18 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 750px; margin: 0 auto; }
+        .hero-visual {
+            max-width: 920px; margin: 2rem auto 0;
+            border-radius: 14px; overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.22);
+            box-shadow:
+                0 0 48px rgba(138, 43, 226, 0.12),
+                0 16px 48px rgba(0, 0, 0, 0.45);
+        }
+        .hero-visual img {
+            display: block; width: 100%; height: auto;
+            vertical-align: middle;
+        }
 
         h2 {
             font-size: 2rem; margin: 3.5rem 0 1.5rem; text-align: center;
@@ -336,6 +348,9 @@
 <!-- HERO -->
 <section class="hero">
     <h1 data-i18n="hero_title">Download &amp; <em>Get Started</em></h1>
+    <figure class="hero-visual">
+        <img src="og-preview.png" width="1024" height="540" alt="S2S Portable — free offline speech-to-speech translator: 28 languages, voice cloning, VRChat, Discord, Zoom, WhatsApp." decoding="async" fetchpriority="high">
+    </figure>
     <p data-i18n="hero_sub">Everything you need to know before downloading S2S Portable. System requirements, prerequisites, licensing, and step-by-step setup instructions.</p>
 </section>
 
