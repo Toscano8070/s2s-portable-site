@@ -494,16 +494,23 @@ S2S_Portable\
     <!-- ============================================================ -->
     <h2 id="llms">&#x1F4DA; <span class="accent" data-i18n="llm_title_inner">Multilingual LLM Pack (Optional &mdash; Single Download)</span></h2>
 
+    <p style="font-size:1.05rem;line-height:1.75;color:var(--text-muted);max-width:48rem;margin:0 0 1.25rem;" data-i18n="llm_lead">Want the same cutting-edge multilingual models power users run today &mdash; without hunting files across the web? This optional pack gives you <strong>three hand-picked GGUF checkpoints</strong> in <strong>one download</strong>, ready to drop into S2S Portable.</p>
+
     <div class="info-box">
-        <strong data-i18n="llm_compat_h">&#x2705; Built for S2S Portable</strong>
-        <p data-i18n="llm_compat_p">This archive bundles <strong>three</strong> GGUF models that are <strong>compatible with S2S Portable</strong> and its local LLM path. They are <strong>leading multilingual instruction models</strong> used for high-quality, many-language reasoning and chat-style tasks alongside your translation pipeline. One download contains all files below.</p>
+        <strong data-i18n="llm_compat_h">&#x2705; Made to work with S2S Portable</strong>
+        <p data-i18n="llm_compat_p">S2S already knows how to load <strong>.gguf</strong> models from its <code>models</code> folder. These three files are <strong>tested formats and naming</strong> that match what the app expects, so you spend less time troubleshooting and more time translating. They represent <strong>today&rsquo;s strongest compact multilingual instruction LLMs</strong> &mdash; ideal when you want fluent, context-aware help in many languages alongside speech translation (reasoning, rephrasing, style tweaks, and similar tasks the main translation stack doesn&rsquo;t cover).</p>
     </div>
 
-    <p data-i18n="llm_list_intro">Included in the bundle:</p>
-    <ul style="color:var(--text-muted);line-height:1.7;max-width:42rem;">
-        <li data-i18n="llm_f1"><code style="color:var(--accent-secondary);">Qwen3.5-0.8B.q8_0.gguf</code> &mdash; compact Qwen3.5, excellent speed/size for lighter GPUs.</li>
-        <li data-i18n="llm_f2"><code style="color:var(--accent-secondary);">Ministral-3-3B-Instruct-2512.Q6_K_H.gguf</code> &mdash; Mistral-family instruct model, strong multilingual coverage.</li>
-        <li data-i18n="llm_f3"><code style="color:var(--accent-secondary);">qwen2.5-7b-instruct-q4_k_m.gguf</code> &mdash; larger Qwen2.5 instruct checkpoint for maximum quality when VRAM allows.</li>
+    <div class="success-box" style="margin:1.25rem 0;">
+        <strong data-i18n="llm_tip_h">&#x1F4A1; Do I need all three at once?</strong>
+        <p style="margin:0.35rem 0 0;" data-i18n="llm_tip_p"><strong>No.</strong> You get the full trio so you can <strong>choose the best fit for your GPU</strong>: a featherweight option for tight VRAM, a balanced mid-size model, and a larger checkpoint when you want maximum quality. Install all files, then pick the one you want inside S2S &mdash; the others stay on disk for when you upgrade hardware or switch workloads.</p>
+    </div>
+
+    <p style="font-weight:600;color:white;margin-top:1.5rem;" data-i18n="llm_list_intro">What&rsquo;s inside the archive</p>
+    <ul style="color:var(--text-muted);line-height:1.75;max-width:46rem;">
+        <li data-i18n="llm_f1"><code style="color:var(--accent-secondary);">Qwen3.5-0.8B.q8_0.gguf</code> &mdash; <strong>Smallest &amp; fastest.</strong> Qwen3.5 in a tiny footprint: great when VRAM is limited or you want instant responses.</li>
+        <li data-i18n="llm_f2"><code style="color:var(--accent-secondary);">Ministral-3-3B-Instruct-2512.Q6_K_H.gguf</code> &mdash; <strong>Sweet spot.</strong> Ministral instruct tuning with <strong>excellent multilingual coverage</strong> &mdash; the workhorse most people run day to day.</li>
+        <li data-i18n="llm_f3"><code style="color:var(--accent-secondary);">qwen2.5-7b-instruct-q4_k_m.gguf</code> &mdash; <strong>Heaviest hitter.</strong> Qwen2.5 7B at solid quantization: reach for this when you have headroom and want the richest answers.</li>
     </ul>
 
     <div style="text-align:center;margin:1.5rem 0;">
@@ -511,8 +518,8 @@ S2S_Portable\
     </div>
 
     <div class="card">
-        <h3 data-i18n="llm_install_h">&#x1F4C2; Installation</h3>
-        <p data-i18n="llm_install_p">Extract the archive and copy the <strong>.gguf</strong> files into your S2S <code>models</code> folder (same folder S2S scans for GGUF models):</p>
+        <h3 data-i18n="llm_install_h">&#x1F4C2; Installation (takes about a minute)</h3>
+        <p data-i18n="llm_install_p">Unpack the zip, then move <strong>every</strong> <code>.gguf</code> file into your portable app&rsquo;s <code>models</code> directory &mdash; the same place S2S looks when it lists local LLMs. No renaming required if filenames match the list below:</p>
         <div class="code-block">
 S2S_Portable\
   models\
@@ -520,10 +527,10 @@ S2S_Portable\
     Ministral-3-3B-Instruct-2512.Q6_K_H.gguf
     qwen2.5-7b-instruct-q4_k_m.gguf
         </div>
-        <p style="color:var(--text-muted);font-size:0.85rem;" data-i18n="llm_install_note">Restart S2S if it is already running so the new files appear in the model list.</p>
+        <p style="color:var(--text-muted);font-size:0.85rem;" data-i18n="llm_install_note">If S2S was open, close and reopen it once so the new checkpoints show up in the model picker.</p>
     </div>
 
-    <p style="font-size:0.85rem;color:var(--text-muted);" data-i18n="llm_lic_note">Licensing follows each model&rsquo;s original terms (e.g. Apache 2.0 / Mistral license). Use only in compliance with those licenses and your S2S license tier.</p>
+    <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.6;max-width:44rem;" data-i18n="llm_lic_note">Each weight file remains under its <strong>original open license</strong> (for example Apache&nbsp;2.0 or Mistral&rsquo;s terms). You are responsible for using them in line with those licenses <strong>and</strong> with your S2S license tier (personal vs commercial). When in doubt, prefer the smaller Qwen checkpoints for experimentation and keep commercial workflows aligned with your agreement.</p>
 
     <hr class="divider">
 
@@ -677,7 +684,7 @@ S2S_Portable\
         <div style="display:flex;flex-direction:column;gap:1rem;align-items:center;">
             <a href="https://www.transferxl.com/download/08jfVgVPbVyD50" class="btn btn-primary" style="font-size:1.2rem;padding:1rem 3rem;" data-download="s2s"><span data-i18n="dl_main_btn">&#x2B07; Download S2S Portable v5.0 (~25 GB)</span></a>
             <a href="https://www.transferxl.com/download/08vs5TdPL09tgM" class="btn btn-secondary" data-download="nllb"><span data-i18n="dl_nllb_btn">&#x2B07; Download NLLB Translation Models (~5.1 GB)</span></a>
-            <a href="https://www.transferxl.com/download/REPLACE_LLMS_BUNDLE_ID" class="btn btn-secondary" data-download="llms"><span data-i18n="dl_llm_btn">&#x2B07; Download LLM pack (3 GGUFs, one archive &mdash; ~8&ndash;10 GB)</span></a>
+            <a href="https://www.transferxl.com/download/REPLACE_LLMS_BUNDLE_ID" class="btn btn-secondary" data-download="llms"><span data-i18n="dl_llm_btn">&#x2B07; Download multilingual LLM pack (3 GGUFs, one zip &mdash; ~8&ndash;10 GB)</span></a>
         </div>
 
         <div style="margin-top:2rem;">
@@ -795,17 +802,20 @@ EN: {
   nllb_lic_p: 'These models are based on Meta AI\'s NLLB-200 and licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color:var(--accent-secondary);">CC-BY-NC-4.0</a>. They may only be used for personal, non-commercial purposes. For commercial translation, S2S Portable supports Qwen3 (Apache 2.0 \u2014 full commercial use permitted).',
   nllb_lic_attr: 'Attribution: NLLB Team et al., \u201CNo Language Left Behind: Scaling Human-Centered Machine Translation,\u201D Meta AI, 2022. Models converted to CTranslate2 int8 format.',
   llm_title_inner: 'Multilingual LLM Pack (Optional \u2014 Single Download)',
-  llm_compat_h: '\u2705 Built for S2S Portable',
-  llm_compat_p: 'This archive bundles <strong>three</strong> GGUF models that are <strong>compatible with S2S Portable</strong> and its local LLM path. They are <strong>leading multilingual instruction models</strong> used for high-quality, many-language reasoning and chat-style tasks alongside your translation pipeline. One download contains all files below.',
-  llm_list_intro: 'Included in the bundle:',
-  llm_f1: '<code style="color:var(--accent-secondary);">Qwen3.5-0.8B.q8_0.gguf</code> \u2014 compact Qwen3.5, excellent speed/size for lighter GPUs.',
-  llm_f2: '<code style="color:var(--accent-secondary);">Ministral-3-3B-Instruct-2512.Q6_K_H.gguf</code> \u2014 Mistral-family instruct model, strong multilingual coverage.',
-  llm_f3: '<code style="color:var(--accent-secondary);">qwen2.5-7b-instruct-q4_k_m.gguf</code> \u2014 larger Qwen2.5 instruct checkpoint for maximum quality when VRAM allows.',
+  llm_lead: 'Want the same cutting-edge multilingual models power users run today \u2014 without hunting files across the web? This optional pack gives you <strong>three hand-picked GGUF checkpoints</strong> in <strong>one download</strong>, ready to drop into S2S Portable.',
+  llm_compat_h: '\u2705 Made to work with S2S Portable',
+  llm_compat_p: 'S2S already knows how to load <strong>.gguf</strong> models from its <code>models</code> folder. These three files are <strong>tested formats and naming</strong> that match what the app expects, so you spend less time troubleshooting and more time translating. They represent <strong>today\u2019s strongest compact multilingual instruction LLMs</strong> \u2014 ideal when you want fluent, context-aware help in many languages alongside speech translation (reasoning, rephrasing, style tweaks, and similar tasks the main translation stack doesn\u2019t cover).',
+  llm_tip_h: '\uD83D\uDCA1 Do I need all three at once?',
+  llm_tip_p: '<strong>No.</strong> You get the full trio so you can <strong>choose the best fit for your GPU</strong>: a featherweight option for tight VRAM, a balanced mid-size model, and a larger checkpoint when you want maximum quality. Install all files, then pick the one you want inside S2S \u2014 the others stay on disk for when you upgrade hardware or switch workloads.',
+  llm_list_intro: 'What\u2019s inside the archive',
+  llm_f1: '<code style="color:var(--accent-secondary);">Qwen3.5-0.8B.q8_0.gguf</code> \u2014 <strong>Smallest &amp; fastest.</strong> Qwen3.5 in a tiny footprint: great when VRAM is limited or you want instant responses.',
+  llm_f2: '<code style="color:var(--accent-secondary);">Ministral-3-3B-Instruct-2512.Q6_K_H.gguf</code> \u2014 <strong>Sweet spot.</strong> Ministral instruct tuning with <strong>excellent multilingual coverage</strong> \u2014 the workhorse most people run day to day.',
+  llm_f3: '<code style="color:var(--accent-secondary);">qwen2.5-7b-instruct-q4_k_m.gguf</code> \u2014 <strong>Heaviest hitter.</strong> Qwen2.5 7B at solid quantization: reach for this when you have headroom and want the richest answers.',
   llm_dl_btn: '\u2B07 Download all 3 LLMs (one archive \u2014 ~8\u201310 GB)',
-  llm_install_h: '\uD83D\uDCC2 Installation',
-  llm_install_p: 'Extract the archive and copy the <strong>.gguf</strong> files into your S2S <code>models</code> folder (same folder S2S scans for GGUF models):',
-  llm_install_note: 'Restart S2S if it is already running so the new files appear in the model list.',
-  llm_lic_note: 'Licensing follows each model\u2019s original terms (e.g. Apache 2.0 / Mistral license). Use only in compliance with those licenses and your S2S license tier.',
+  llm_install_h: '\uD83D\uDCC2 Installation (takes about a minute)',
+  llm_install_p: 'Unpack the zip, then move <strong>every</strong> <code>.gguf</code> file into your portable app\u2019s <code>models</code> directory \u2014 the same place S2S looks when it lists local LLMs. No renaming required if filenames match the list below:',
+  llm_install_note: 'If S2S was open, close and reopen it once so the new checkpoints show up in the model picker.',
+  llm_lic_note: 'Each weight file remains under its <strong>original open license</strong> (for example Apache&nbsp;2.0 or Mistral\u2019s terms). You are responsible for using them in line with those licenses <strong>and</strong> with your S2S license tier (personal vs commercial). When in doubt, prefer the smaller Qwen checkpoints for experimentation and keep commercial workflows aligned with your agreement.',
   oss_title_inner: 'Open-Source Components &amp; Licenses',
   oss_intro: 'S2S Portable is built with the following open-source technologies. We respect all licenses and give full credit to the original authors.',
   oss_comp: 'Component', oss_lic: 'License', oss_comm: 'Commercial Use',
@@ -849,7 +859,7 @@ EN: {
   dl_c5: 'I will download NLLB models separately (instructions above)',
   dl_main_btn: '\u2B07 Download S2S Portable v5.0 (~25 GB)',
   dl_nllb_btn: '\u2B07 Download NLLB Translation Models (~5.1 GB)',
-  dl_llm_btn: '\u2B07 Download LLM pack (3 GGUFs, one archive \u2014 ~8\u201310 GB)',
+  dl_llm_btn: '\u2B07 Download multilingual LLM pack (3 GGUFs, one zip \u2014 ~8\u201310 GB)',
   dl_file: 'Download', dl_size: 'Size', dl_app: 'S2S Portable v5.0',
   dl_nllb: 'NLLB Models (all 3)', dl_llm: 'LLM pack (3 GGUF models)', dl_total: 'Total',
   footer_tag: 'Breaking language barriers, one USB stick at a time.',
