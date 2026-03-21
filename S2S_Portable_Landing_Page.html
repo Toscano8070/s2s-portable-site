@@ -145,6 +145,14 @@
 
         .features { padding: 5rem 10%; background: var(--bg-color); }
         .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+        .acc-section-title {
+            display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+            gap: 0.55rem;
+        }
+        .acc-section-title .disability-symbol {
+            font-size: 2rem; line-height: 1; color: var(--accent-secondary);
+            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.35));
+        }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .card {
             background: var(--card-bg); padding: 2rem; border-radius: 12px;
@@ -305,7 +313,10 @@
 </section>
 
 <section id="accessibility" class="accessibility">
-    <h2 class="section-title" data-i18n="acc_title">Built for Everyone</h2>
+    <h2 class="section-title acc-section-title">
+        <span class="disability-symbol" aria-hidden="true">&#x267F;&#xFE0F;</span>
+        <span data-i18n="acc_title">Built for Everyone</span>
+    </h2>
     <p style="color:var(--text-muted);max-width:700px;margin:0 auto;" data-i18n="acc_sub">
         S2S Portable bridges communication gaps. Whether you are mute, hard of hearing, or just prefer text &mdash; we have you covered.
     </p>
