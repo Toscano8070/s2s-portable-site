@@ -151,13 +151,14 @@
         }
         .acc-section-title .disability-symbol-wrap {
             display: inline-flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
-            min-width: 3rem; height: 3rem; padding: 0 0.35rem; border-radius: 12px;
+            flex-shrink: 0; gap: 0.2rem;
+            min-height: 3rem; padding: 0.25rem 0.55rem; border-radius: 12px;
             background: rgba(0, 212, 255, 0.12);
             border: 1px solid rgba(0, 212, 255, 0.45);
-            font-size: 1.85rem; line-height: 1; color: var(--accent-secondary);
+            font-size: 1.55rem; line-height: 1; color: var(--accent-secondary);
             filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.4));
         }
+        .acc-section-title .disability-symbol-wrap .acc-ico { display: inline-block; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .card {
             background: var(--card-bg); padding: 2rem; border-radius: 12px;
@@ -319,7 +320,9 @@
 
 <section id="accessibility" class="accessibility">
     <h2 class="section-title acc-section-title">
-        <span class="disability-symbol-wrap" aria-hidden="true" title="Accessibility">&#x267F;&#xFE0F;</span>
+        <span class="disability-symbol-wrap" aria-hidden="true" title="Non-speaking &amp; hard-of-hearing friendly">
+            <span class="acc-ico">&#x1F507;&#xFE0F;</span><span class="acc-ico">&#x1F9BB;</span>
+        </span>
         <span data-i18n="acc_title">Built for Everyone</span>
     </h2>
     <p style="color:var(--text-muted);max-width:700px;margin:0 auto;" data-i18n="acc_sub">
