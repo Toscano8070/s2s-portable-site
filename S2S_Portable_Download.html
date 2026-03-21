@@ -3159,6 +3159,36 @@ I18N["ZH-TW"]=I18N.ZH; I18N["ZH-HK"]=I18N.ZH; I18N["PT-BR"]=I18N.PT;
 </script>
 <script src="download-llm-i18n-patch.js"></script>
 <script>
+var S2S_SITE_LANG_KEY = 's2s_site_lang';
+function s2sMapBrowserToCode(raw) {
+  if (!raw) return 'EN';
+  var x = String(raw).toLowerCase().replace(/_/g, '-').trim();
+  if (x === 'zh-tw' || x === 'zh-hant') return 'ZH-TW';
+  if (x === 'zh-hk') return 'ZH-HK';
+  if (x === 'zh-cn' || x === 'zh-sg' || x === 'zh') return 'ZH';
+  if (x.indexOf('zh-') === 0) return 'ZH';
+  if (x.indexOf('pt-br') === 0) return 'PT-BR';
+  var seg = x.split('-')[0];
+  var m = { ja: 'JA', ko: 'KO', es: 'ES', fr: 'FR', de: 'DE', it: 'IT', pt: 'PT', ru: 'RU', uk: 'UK', pl: 'PL', nl: 'NL', sv: 'SV', da: 'DA', no: 'NO', nb: 'NO', nn: 'NO', fi: 'FI', cs: 'CS', sk: 'SK', ro: 'RO', hu: 'HU', el: 'EL', tr: 'TR', ar: 'AR', vi: 'VI' };
+  var c = m[seg];
+  if (c && I18N[c]) return c;
+  if (seg.length === 2) {
+    var u = seg.toUpperCase();
+    if (I18N[u]) return u;
+  }
+  return 'EN';
+}
+function s2sApplyInitialSiteLang() {
+  try {
+    var s = localStorage.getItem(S2S_SITE_LANG_KEY);
+    if (s && (I18N[s] || I18N[s.substring(0, 2)])) {
+      switchLang(s);
+      return;
+    }
+    var b = s2sMapBrowserToCode(navigator.language || navigator.userLanguage || '');
+    if (b && b !== 'EN') switchLang(b);
+  } catch (e) {}
+}
 function buildDropdown(){
     const d=document.getElementById('langDrop');
     d.innerHTML='';
@@ -3180,6 +3210,7 @@ function switchLang(code){
         document.getElementById('langSwitcherBtn').innerHTML=`<span class="mini-flag" style="background:${lang.flag}"></span>${code} &#9662;`;
     }
     document.getElementById('langDrop').classList.remove('open');
+    try { localStorage.setItem(S2S_SITE_LANG_KEY, code); } catch (e) {}
 }
 
 document.addEventListener('click',e=>{
@@ -3188,6 +3219,7 @@ document.addEventListener('click',e=>{
 
 buildDropdown();
 applyDownloadHrefs();
+setTimeout(s2sApplyInitialSiteLang, 0);
 </script>
 </body>
 </html>

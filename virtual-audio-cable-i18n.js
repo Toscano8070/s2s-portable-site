@@ -1582,6 +1582,40 @@ const I18N = {
 };
 I18N["ZH-TW"] = I18N.ZH; I18N["ZH-HK"] = I18N.ZH; I18N["PT-BR"] = I18N.PT;
 
+var S2S_SITE_LANG_KEY = 's2s_site_lang';
+
+function vbacMapBrowserToCode(raw) {
+  if (!raw) return 'EN';
+  var x = String(raw).toLowerCase().replace(/_/g, '-').trim();
+  if (x === 'zh-tw' || x === 'zh-hant') return 'ZH-TW';
+  if (x === 'zh-hk') return 'ZH-HK';
+  if (x === 'zh-cn' || x === 'zh-sg' || x === 'zh') return 'ZH';
+  if (x.indexOf('zh-') === 0) return 'ZH';
+  if (x.indexOf('pt-br') === 0) return 'PT-BR';
+  var seg = x.split('-')[0];
+  var m = { ja: 'JA', ko: 'KO', es: 'ES', fr: 'FR', de: 'DE', it: 'IT', pt: 'PT', ru: 'RU', uk: 'UK', pl: 'PL', nl: 'NL', sv: 'SV', da: 'DA', no: 'NO', nb: 'NO', nn: 'NO', fi: 'FI', cs: 'CS', sk: 'SK', ro: 'RO', hu: 'HU', el: 'EL', tr: 'TR', ar: 'AR', vi: 'VI' };
+  var c = m[seg];
+  if (c && I18N[c]) return c;
+  if (seg.length === 2) {
+    var u = seg.toUpperCase();
+    if (I18N[u]) return u;
+  }
+  return 'EN';
+}
+
+function vbacApplyStoredOrBrowserLang() {
+  if (typeof I18N === 'undefined') return;
+  try {
+    var s = localStorage.getItem(S2S_SITE_LANG_KEY);
+    if (s && (I18N[s] || I18N[s.substring(0, 2)])) {
+      vbacSwitchLang(s);
+      return;
+    }
+    var b = vbacMapBrowserToCode(navigator.language || navigator.userLanguage || '');
+    if (b && b !== 'EN') vbacSwitchLang(b);
+  } catch (e) {}
+}
+
 function vbacToggleLangDrop(){
   const d=document.getElementById('langDrop');
   const b=document.getElementById('langSwitcherBtn');
@@ -1617,6 +1651,7 @@ function vbacSwitchLang(code){
   if(lang && btn) btn.innerHTML=`<span class=\"mini-flag\" style=\"background:${lang.flag}\"></span>${code} &#9662;`;
   if(drop) drop.classList.remove('open');
   if(btn) btn.setAttribute('aria-expanded','false');
+  try { localStorage.setItem(S2S_SITE_LANG_KEY, code); } catch (e) {}
 }
 
 document.addEventListener('click',e=>{
@@ -1627,4 +1662,9 @@ document.addEventListener('click',e=>{
     if(btn) btn.setAttribute('aria-expanded','false');
   }
 });
-if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',()=>{ vbacBuildDropdown(); });else { vbacBuildDropdown(); }
+function vbacBoot() {
+  vbacBuildDropdown();
+  setTimeout(vbacApplyStoredOrBrowserLang, 0);
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', vbacBoot);
+else vbacBoot();
