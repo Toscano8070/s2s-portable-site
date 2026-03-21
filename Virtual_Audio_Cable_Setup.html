@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Audio Cable Setup &mdash; S2S Portable</title>
+    <meta name="description" content="How S2S Portable auto-detects VB-Audio cables, runs the cable test, opens Windows Sound settings, and what to set in Quest, VRChat, and Windows.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://toscano8070.github.io/s2s-portable-site/Virtual_Audio_Cable_Setup.html">
+    <style>
+        :root {
+            --bg: #0f111a; --card: #1a1d2d; --text: #e0e0e0; --muted: #a0a0a0;
+            --purple: #8a2be2; --cyan: #00d4ff; --warn: #ff6b6b; --success: #2ecc71;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif; }
+        body { background:var(--bg); color:var(--text); line-height:1.7; }
+        .wrap { max-width:900px; margin:0 auto; padding:2rem 5%; }
+
+        header {
+            background:rgba(15,17,26,0.95); padding:1rem 5%; position:sticky; top:0; z-index:100;
+            border-bottom:1px solid #333; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;
+        }
+        .logo { font-size:1.5rem; font-weight:bold; color:var(--cyan); text-decoration:none; }
+        .logo span { color:var(--purple); }
+        .nav-links { display:flex; flex-wrap:wrap; gap:0.75rem; align-items:center; }
+        .nav-links a {
+            color:var(--cyan); text-decoration:none; font-weight:500;
+            border:1px solid var(--cyan); padding:0.35rem 0.85rem; border-radius:6px; font-size:0.9rem;
+        }
+        .nav-links a:hover { background:rgba(0,212,255,0.1); }
+
+        h1 { font-size:2rem; margin:2rem 0 0.5rem; }
+        h1 em { font-style:normal; color:var(--cyan); }
+        .lead { color:var(--muted); font-size:1.05rem; margin-bottom:2rem; }
+
+        h2 {
+            font-size:1.45rem; margin:2.5rem 0 1rem; padding-bottom:0.5rem;
+            border-bottom:2px solid var(--purple); color:white;
+        }
+        h3 { font-size:1.15rem; margin:1.25rem 0 0.5rem; color:var(--cyan); }
+        p, li { color:var(--muted); margin-bottom:0.75rem; }
+        ul, ol { padding-left:1.5rem; }
+        li { margin-bottom:0.45rem; }
+
+        .toc { background:var(--card); padding:1.5rem 2rem; border-radius:12px; margin:2rem 0; }
+        .toc a { color:var(--cyan); text-decoration:none; display:block; padding:0.25rem 0; }
+        .toc a:hover { color:var(--purple); }
+
+        .info-box {
+            background:var(--card); border-left:4px solid var(--cyan); padding:1.25rem 1.5rem;
+            border-radius:0 8px 8px 0; margin:1.5rem 0;
+        }
+        .info-box strong { color:var(--cyan); }
+
+        .notice {
+            background:var(--card); border-left:4px solid var(--warn); padding:1.25rem 1.5rem;
+            border-radius:0 8px 8px 0; margin:1.5rem 0;
+        }
+        .notice strong { color:var(--warn); }
+
+        .setup-table { width:100%; border-collapse:collapse; margin:1.25rem 0; font-size:0.95rem; }
+        .setup-table th, .setup-table td {
+            padding:0.65rem 1rem; text-align:left; border-bottom:1px solid #333; vertical-align:top;
+        }
+        .setup-table th { color:var(--cyan); background:var(--card); width:28%; }
+        .setup-table td { color:var(--muted); }
+        .setup-table code { font-size:0.85em; }
+
+        .step { display:flex; gap:1rem; margin:1rem 0; align-items:flex-start; }
+        .step-num {
+            background:var(--purple); color:white; width:30px; height:30px; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; font-weight:bold; flex-shrink:0; font-size:0.85rem;
+        }
+        .step-text { flex:1; color:var(--muted); }
+
+        code {
+            background:rgba(0,212,255,0.1); color:var(--cyan); padding:0.12rem 0.4rem;
+            border-radius:4px; font-size:0.9em;
+        }
+
+        footer {
+            background:#0a0b10; padding:2rem 5%; text-align:center;
+            border-top:1px solid #333; color:var(--muted); margin-top:3rem;
+        }
+        footer a { color:var(--cyan); }
+
+        @media (max-width:640px) {
+            .setup-table th, .setup-table td { display:block; width:100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="S2S_Portable_Landing_Page.html" class="logo">S2S <span>Portable</span></a>
+    <div class="nav-links">
+        <a href="S2S_Portable_Download.html">Download &amp; setup</a>
+        <a href="S2S_Portable_Manual.html">Manual</a>
+    </div>
+</header>
+
+<div class="wrap">
+
+    <h1>Virtual Audio Cable <em>Setup Help</em></h1>
+    <p class="lead">How S2S Portable detects VB-Audio devices, runs the cable test, updates <code>config.ini</code>, and what you still set manually in Quest, VRChat, and Windows.</p>
+
+    <nav class="toc">
+        <strong style="color:white;">On this page</strong>
+        <a href="#flow">Recommended flow</a>
+        <a href="#startup">Startup auto-configuration</a>
+        <a href="#launch">First launch vs returning</a>
+        <a href="#windows-sound">Open Windows Sound &amp; helper module</a>
+        <a href="#summary">Setup summary (Quest / VRChat / Windows)</a>
+        <a href="#vrchat">VRChat (in-game only)</a>
+        <a href="#persist">Optional: make devices stick</a>
+        <a href="#config">Turn off auto cable test</a>
+    </nav>
+
+    <h2 id="flow">Recommended flow</h2>
+    <ol>
+        <li>Install <strong>VB-Audio Virtual Cable</strong> from <a href="https://vb-audio.com/Cable/" style="color:var(--cyan);">vb-audio.com/Cable</a> and reboot if prompted.</li>
+        <li>In S2S Portable, run <strong>Audio Wizard</strong> or <strong>Test &amp; Connect Audio Cables</strong> (Audio tab).</li>
+        <li>The app applies detected devices to the GUI and writes results to <code>config.ini</code>.</li>
+        <li>When the <strong>setup summary</strong> appears, use <strong>Open Windows Sound</strong> if you need to set Windows default input/output quickly.</li>
+        <li>Configure <strong>Quest</strong>, <strong>VRChat</strong>, and <strong>Windows</strong> as shown in the summary (device names match what the wizard found on your PC).</li>
+    </ol>
+
+    <h2 id="startup">Startup auto-configuration</h2>
+    <p>About <strong>2 seconds</strong> after the app loads, if the virtual cable is still missing (internal <code>virtual_id = -1</code>) and <strong>auto cable configuration</strong> is enabled (default: on), S2S runs the <strong>cable test in the background</strong>.</p>
+    <p>It looks for your microphone, headphones, virtual cable, and incoming (game) audio, then:</p>
+    <ul>
+        <li>Writes the results to <code>config.ini</code></li>
+        <li>Refreshes the Audio tab dropdowns so they match</li>
+    </ul>
+
+    <h2 id="launch">First launch vs returning</h2>
+    <ul>
+        <li><strong>First launch:</strong> the language wizard runs at <strong>~800&nbsp;ms</strong>.</li>
+        <li><strong>Returning launch:</strong> at <strong>~2000&nbsp;ms</strong>, if the virtual cable is still not detected, the cable test runs automatically (when auto-config is on).</li>
+    </ul>
+    <p>Whether the test runs from startup or from the wizard, the outcome is the same: <code>config.ini</code> + GUI stay in sync.</p>
+
+    <h2 id="windows-sound">Open Windows Sound &amp; <code>_windows_audio.py</code></h2>
+    <p>After the cable test, the setup summary includes an <strong>Open Windows Sound</strong> button. It opens Windows Sound settings (<code>ms-settings:sound</code>) so you can set default recording and playback devices without leaving S2S.</p>
+    <p>The portable build includes a small helper, <code>_windows_audio.py</code>:</p>
+    <ul>
+        <li><code>open_windows_sound_settings()</code> &mdash; opens the Windows Sound page.</li>
+        <li><code>set_default_devices(mic_name, speaker_name)</code> &mdash; optional; can set defaults programmatically if <strong>pycaw</strong> is installed.</li>
+    </ul>
+
+    <h2 id="summary">Setup summary popup (example routing)</h2>
+    <p>After the wizard finishes, the popup lists where to point each system. Labels use the <strong>real device names</strong> detected on your machine; the table below shows the usual pattern for <strong>two VB cables (A/B)</strong>:</p>
+
+    <table class="setup-table">
+        <tr>
+            <th>Where</th>
+            <th>What to set</th>
+        </tr>
+        <tr>
+            <td><strong>Quest (Microphone)</strong></td>
+            <td>Microphone &rarr; <code>CABLE Output (VB-Audio Cable A)</code></td>
+        </tr>
+        <tr>
+            <td><strong>VRChat (in-game)</strong></td>
+            <td>
+                <strong>Input (Microphone)</strong> &rarr; <code>CABLE Output (VB-Audio Cable A)</code><br><br>
+                <strong>Output</strong> &rarr; <code>CABLE Input (VB-Audio Cable B)</code> for bidirectional, <em>or</em> your headphones for listen-only setups.
+            </td>
+        </tr>
+        <tr>
+            <td><strong>Windows Sound (mixer)</strong></td>
+            <td>
+                <strong>Input (Recording)</strong> &rarr; your physical microphone<br><br>
+                <strong>Output (Playback)</strong> &rarr; your headphones
+            </td>
+        </tr>
+    </table>
+
+    <h2 id="vrchat">VRChat cannot be set by the app</h2>
+    <div class="notice">
+        <strong>Manual step</strong>
+        <p style="margin:0;">S2S does not change VRChat&rsquo;s microphone or speaker for you. You choose those inside VRChat&rsquo;s settings. The setup summary tells you <em>which</em> device name to pick so it matches the cable test.</p>
+    </div>
+
+    <h2 id="persist">Optional: permanent device selection</h2>
+    <p>To make the correct endpoints stick across reboots, run the <strong>Audio Wizard</strong> in the Audio tab with your <strong>Quest headset on and connected</strong>, then <strong>save</strong>. That updates <code>config.ini</code> with the proper device IDs for your rig.</p>
+
+    <h2 id="config">Disable startup auto cable test</h2>
+    <p>If you prefer to run the cable test only by hand, edit <code>config.ini</code>:</p>
+    <div class="info-box">
+        <p style="margin:0;"><code>[AUDIO]</code><br><code>auto_configure_cables = false</code></p>
+    </div>
+    <p>Default is <code>true</code> so new installs get help automatically.</p>
+
+    <p style="margin-top:2rem;color:var(--muted);font-size:0.9rem;">Also see <a href="S2S_Portable_Download.html#setup" style="color:var(--cyan);">Download page &mdash; VB-Audio prerequisites</a> and <a href="S2S_Portable_Manual.html#apps" style="color:var(--cyan);">Manual &sect;7 (VRChat &amp; apps)</a>.</p>
+
+</div>
+
+<footer>
+    <p><a href="S2S_Portable_Landing_Page.html">Home</a> &bull; <a href="S2S_Portable_Download.html">Download</a> &bull; <a href="S2S_Portable_Manual.html">Manual</a></p>
+    <p style="margin-top:0.75rem;font-size:0.85rem;">S2S Portable &mdash; not affiliated with VRChat Inc. or VB-Audio.</p>
+</footer>
+
+</body>
+</html>
