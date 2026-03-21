@@ -715,7 +715,7 @@ S2S_Portable\
                 <tr><td data-i18n="dl_llm">LLM pack (3 GGUF models)</td><td>~8.1 GB</td></tr>
                 <tr><td style="color:white;font-weight:bold;" data-i18n="dl_total">Total</td><td style="color:white;font-weight:bold;">~50 GB</td></tr>
             </table>
-            <p style="margin-top:1.35rem;font-size:0.92rem;line-height:1.65;color:var(--text-muted);max-width:40rem;margin-left:auto;margin-right:auto;text-align:left;" data-i18n="dl_transferxl_hint"><strong>Typical TransferXL save names:</strong> <code>TransferXL-08jNNydrKbqV9s.zip</code> = S2S Portable app (~37 GB). <code>TransferXL-08hVyzVmSkBJp.zip</code> = optional LLM pack (three <code>.gguf</code> files inside &mdash; extract first; ~8.1 GB). Your browser&rsquo;s filename may differ slightly; the ID in the middle matches these official links.</p>
+            <p style="margin-top:1.35rem;font-size:0.92rem;line-height:1.65;color:var(--text-muted);max-width:40rem;margin-left:auto;margin-right:auto;text-align:left;" data-i18n="dl_transferxl_hint"><strong>Typical save names:</strong> <code>08jNNydrKbqV9s.zip</code> = S2S Portable app (~37 GB). <code>TransferXL-08hVyzVmSkBJp.zip</code> = optional LLM pack (three <code>.gguf</code> files inside &mdash; extract first; ~8.1 GB). Your browser&rsquo;s filename may differ slightly; the transfer IDs match these official links.</p>
         </div>
     </div>
 
@@ -770,7 +770,7 @@ const DOWNLOAD_HREF_S2S = 'https://www.transferxl.com/manage/08jNNydrKbqV9s/';
 const DOWNLOAD_HREF_NLLB = 'https://www.transferxl.com/download/08vs5TdPL09tgM';
 // LLM pack — TransferXL often saves as TransferXL-08hVyzVmSkBJp.zip (extract, then put .gguf files in models/)
 const DOWNLOAD_HREF_LLMS = 'https://www.transferxl.com/download/08hVyzVmSkBJp';
-// S2S app zip is often saved as TransferXL-08jNNydrKbqV9s.zip
+// S2S app zip save name: 08jNNydrKbqV9s.zip
 function applyDownloadHrefs() {
     document.querySelectorAll('a[data-download="s2s"]').forEach(function (a) { a.href = DOWNLOAD_HREF_S2S; });
     document.querySelectorAll('a[data-download="nllb"]').forEach(function (a) { a.href = DOWNLOAD_HREF_NLLB; });
@@ -886,7 +886,7 @@ EN: {
   dl_llm_btn: '\u2B07 Download LLM pack (zip with 3 .gguf files \u2014 ~8.1 GB)',
   dl_file: 'Download', dl_size: 'Size', dl_app: 'S2S Portable v5.0',
   dl_nllb: 'NLLB Models (all 3)', dl_llm: 'LLM pack (3 GGUF models, 1 zip)', dl_total: 'Total',
-  dl_transferxl_hint: '<strong>Typical TransferXL save names:</strong> <code>TransferXL-08jNNydrKbqV9s.zip</code> = S2S Portable app (~37 GB). <code>TransferXL-08hVyzVmSkBJp.zip</code> = optional LLM pack (three <code>.gguf</code> files inside \u2014 extract first; ~8.1 GB). Your browser\u2019s filename may differ slightly; the ID in the middle matches these official links.',
+  dl_transferxl_hint: '<strong>Typical save names:</strong> <code>08jNNydrKbqV9s.zip</code> = S2S Portable app (~37 GB). <code>TransferXL-08hVyzVmSkBJp.zip</code> = optional LLM pack (three <code>.gguf</code> files inside \u2014 extract first; ~8.1 GB). Your browser\u2019s filename may differ slightly; the transfer IDs match these official links.',
   footer_tag: 'Breaking language barriers, one USB stick at a time.',
   footer_home: 'Home', footer_manual: 'Manual', footer_donate: 'Donate',
   footer_discord: 'Discord Community',
