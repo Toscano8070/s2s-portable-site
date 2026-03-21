@@ -513,7 +513,7 @@ S2S_Portable\
     <!-- ============================================================ -->
     <h2 id="llms">&#x1F4DA; <span class="accent" data-i18n="llm_title_inner">Multilingual LLM Pack (Optional &mdash; Three .gguf Files)</span></h2>
 
-    <p style="font-size:1.05rem;line-height:1.75;color:var(--text-muted);max-width:48rem;margin:0 0 1.25rem;" data-i18n="llm_lead">Want the same cutting-edge multilingual models power users run today &mdash; without hunting files across the web? You get <strong>three hand-picked checkpoints</strong> as <strong>separate .gguf files</strong> (there is <strong>no zip</strong> &mdash; nothing to unpack). Download them from the link below, then move each file into S2S&rsquo;s <code>models</code> folder. <strong>Already have another model?</strong> You can drop in <strong>any multilingual LLM you want</strong>, as long as it uses the <strong>.gguf</strong> format and the same <code>models</code> folder rules below.</p>
+    <p style="font-size:1.05rem;line-height:1.75;color:var(--text-muted);max-width:48rem;margin:0 0 1.25rem;" data-i18n="llm_lead">The link below downloads <strong>one TransferXL zip</strong> (browsers often save it as <code>TransferXL-08hVyzVmSkBJp.zip</code>). <strong>Extract it</strong> to get <strong>three .gguf checkpoints</strong>, then move <strong>each</strong> file into S2S&rsquo;s <code>models</code> folder. This is the same cutting-edge multilingual bundle power users run &mdash; without hunting files across the web. <strong>Already have another model?</strong> You can still add <strong>any multilingual LLM you want</strong> if it uses <strong>.gguf</strong> and follows the <code>models</code> folder rules below.</p>
 
     <div class="info-box">
         <strong data-i18n="llm_compat_h">&#x2705; Any multilingual LLM in <code>.gguf</code> format</strong>
@@ -525,7 +525,7 @@ S2S_Portable\
         <p style="margin:0.35rem 0 0;" data-i18n="llm_tip_p"><strong>No.</strong> You get the full trio so you can <strong>choose the best fit for your GPU</strong>: a featherweight option for tight VRAM, a balanced mid-size model, and a larger checkpoint when you want maximum quality. Install all files, then pick the one you want inside S2S &mdash; the others stay on disk for when you upgrade hardware or switch workloads. <strong>Your own <code>.gguf</code> files</strong> appear in the same list once they sit in <code>models</code>.</p>
     </div>
 
-    <p style="font-weight:600;color:white;margin-top:1.5rem;" data-i18n="llm_list_intro">Recommended bundle &mdash; three files (download separately or all from one link)</p>
+    <p style="font-weight:600;color:white;margin-top:1.5rem;" data-i18n="llm_list_intro">Recommended bundle &mdash; three .gguf files inside one zip (from the link below)</p>
     <ul style="color:var(--text-muted);line-height:1.75;max-width:46rem;">
         <li data-i18n="llm_f1"><code style="color:var(--accent-secondary);">Qwen3.5-0.8B.q8_0.gguf</code> &mdash; <strong>Smallest &amp; fastest.</strong> Qwen3.5 in a tiny footprint: great when VRAM is limited or you want instant responses.</li>
         <li data-i18n="llm_f2"><code style="color:var(--accent-secondary);">Ministral-3-3B-Instruct-2512.Q6_K_H.gguf</code> &mdash; <strong>Sweet spot.</strong> Ministral instruct tuning with <strong>excellent multilingual coverage</strong> &mdash; the workhorse most people run day to day.</li>
@@ -533,13 +533,13 @@ S2S_Portable\
     </ul>
 
     <div style="text-align:center;margin:1.5rem 0;">
-        <a href="https://www.transferxl.com/download/08hVyzVmSkBJp" class="btn btn-secondary" data-download="llms"><span data-i18n="llm_dl_btn">&#x2B07; Download 3 LLMs (loose .gguf files &mdash; ~8.1 GB total)</span></a>
+        <a href="https://www.transferxl.com/download/08hVyzVmSkBJp" class="btn btn-secondary" data-download="llms"><span data-i18n="llm_dl_btn">&#x2B07; Download LLM pack (zip with 3 .gguf files &mdash; ~8.1 GB)</span></a>
     </div>
 
     <div class="card">
         <h3 data-i18n="llm_install_h">&#x1F4C2; Installation (takes about a minute)</h3>
         <p style="color:var(--accent-secondary);font-weight:700;margin-bottom:0.75rem;" data-i18n="llm_install_highlight">Put <strong>every</strong> LLM checkpoint <strong>only</strong> in the <code>models</code> folder &mdash; <strong>not</strong> inside <code>models\nllb</code> or any other subfolder. Applies to our bundle <strong>and</strong> any other <code>.gguf</code> you add.</p>
-        <p data-i18n="llm_install_p">For this bundle you get <strong>three separate .gguf files</strong>: move each into <code>S2S_Portable\models\</code> (next to the app). No extraction step. Keep these <strong>exact filenames</strong> so you know which is which. <strong>Any other multilingual <code>.gguf</code></strong> you download elsewhere goes in the <strong>same folder</strong> with the same rules &mdash; if S2S can load it on your GPU, it will show up in the model picker.</p>
+        <p data-i18n="llm_install_p">Extract <code>TransferXL-08hVyzVmSkBJp.zip</code> (or whatever name your browser saved). Move <strong>each</strong> of the three <code>.gguf</code> files into <code>S2S_Portable\models\</code> next to the app &mdash; <strong>not</strong> inside subfolders. Keep these <strong>exact filenames</strong>. <strong>Any other multilingual <code>.gguf</code></strong> you download elsewhere goes in the <strong>same folder</strong> with the same rules &mdash; if S2S can load it on your GPU, it will show up in the model picker.</p>
         <div class="code-block">
 S2S_Portable\
   models\   &larr; put ALL .gguf LLMs HERE (this folder only)
@@ -704,7 +704,7 @@ S2S_Portable\
         <div style="display:flex;flex-direction:column;gap:1rem;align-items:center;">
             <a href="https://www.transferxl.com/download/08jfVgVPbVyD50" class="btn btn-primary" style="font-size:1.2rem;padding:1rem 3rem;" data-download="s2s"><span data-i18n="dl_main_btn">&#x2B07; Download S2S Portable v5.0 (~37 GB)</span></a>
             <a href="https://www.transferxl.com/download/08vs5TdPL09tgM" class="btn btn-secondary" data-download="nllb"><span data-i18n="dl_nllb_btn">&#x2B07; Download NLLB Translation Models (~5.1 GB)</span></a>
-            <a href="https://www.transferxl.com/download/08hVyzVmSkBJp" class="btn btn-secondary" data-download="llms"><span data-i18n="dl_llm_btn">&#x2B07; Download LLM pack (3 loose .gguf files &mdash; ~8.1 GB)</span></a>
+            <a href="https://www.transferxl.com/download/08hVyzVmSkBJp" class="btn btn-secondary" data-download="llms"><span data-i18n="dl_llm_btn">&#x2B07; Download LLM pack (zip with 3 .gguf files &mdash; ~8.1 GB)</span></a>
         </div>
 
         <div style="margin-top:2rem;">
@@ -715,6 +715,7 @@ S2S_Portable\
                 <tr><td data-i18n="dl_llm">LLM pack (3 GGUF models)</td><td>~8.1 GB</td></tr>
                 <tr><td style="color:white;font-weight:bold;" data-i18n="dl_total">Total</td><td style="color:white;font-weight:bold;">~50 GB</td></tr>
             </table>
+            <p style="margin-top:1.35rem;font-size:0.92rem;line-height:1.65;color:var(--text-muted);max-width:40rem;margin-left:auto;margin-right:auto;text-align:left;" data-i18n="dl_transferxl_hint"><strong>Typical TransferXL save names:</strong> <code>TransferXL-08jfVgVPbVyD50.zip</code> = S2S Portable app (~37 GB). <code>TransferXL-08hVyzVmSkBJp.zip</code> = optional LLM pack (three <code>.gguf</code> files inside &mdash; extract first; ~8.1 GB). Your browser&rsquo;s filename may differ slightly; the ID in the middle matches these official links.</p>
         </div>
     </div>
 
@@ -767,8 +768,9 @@ const LANGS = [
 
 const DOWNLOAD_HREF_S2S = 'https://www.transferxl.com/download/08jfVgVPbVyD50';
 const DOWNLOAD_HREF_NLLB = 'https://www.transferxl.com/download/08vs5TdPL09tgM';
-// LLM pack (three .gguf files) — TransferXL download:
+// LLM pack — TransferXL often saves as TransferXL-08hVyzVmSkBJp.zip (extract, then put .gguf files in models/)
 const DOWNLOAD_HREF_LLMS = 'https://www.transferxl.com/download/08hVyzVmSkBJp';
+// S2S app zip is often saved as TransferXL-08jfVgVPbVyD50.zip
 function applyDownloadHrefs() {
     document.querySelectorAll('a[data-download="s2s"]').forEach(function (a) { a.href = DOWNLOAD_HREF_S2S; });
     document.querySelectorAll('a[data-download="nllb"]').forEach(function (a) { a.href = DOWNLOAD_HREF_NLLB; });
@@ -823,19 +825,19 @@ EN: {
   nllb_lic_p: 'These models are based on Meta AI\'s NLLB-200 and licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color:var(--accent-secondary);">CC-BY-NC-4.0</a>. They may only be used for personal, non-commercial purposes. For commercial translation, S2S Portable supports Qwen3 (Apache 2.0 \u2014 full commercial use permitted).',
   nllb_lic_attr: 'Attribution: NLLB Team et al., \u201CNo Language Left Behind: Scaling Human-Centered Machine Translation,\u201D Meta AI, 2022. Models converted to CTranslate2 int8 format.',
   llm_title_inner: 'Multilingual LLM Pack (Optional \u2014 Three .gguf Files)',
-  llm_lead: 'Want the same cutting-edge multilingual models power users run today \u2014 without hunting files across the web? You get <strong>three hand-picked checkpoints</strong> as <strong>separate .gguf files</strong> (there is <strong>no zip</strong> \u2014 nothing to unpack). Download them from the link below, then move each file into S2S\u2019s <code>models</code> folder. <strong>Already have another model?</strong> You can drop in <strong>any multilingual LLM you want</strong>, as long as it uses the <strong>.gguf</strong> format and the same <code>models</code> folder rules below.',
+  llm_lead: 'The link below downloads <strong>one TransferXL zip</strong> (browsers often save it as <code>TransferXL-08hVyzVmSkBJp.zip</code>). <strong>Extract it</strong> to get <strong>three .gguf checkpoints</strong>, then move <strong>each</strong> file into S2S\u2019s <code>models</code> folder. This is the same cutting-edge multilingual bundle power users run \u2014 without hunting files across the web. <strong>Already have another model?</strong> You can still add <strong>any multilingual LLM you want</strong> if it uses <strong>.gguf</strong> and follows the <code>models</code> folder rules below.',
   llm_compat_h: '\u2705 Any multilingual LLM in <code>.gguf</code> format',
   llm_compat_p: 'S2S Portable scans the <code>models</code> folder for <strong>.gguf</strong> checkpoints. You are <strong>not limited</strong> to our trio: place <strong>whatever multilingual LLM you prefer</strong> there, as long as the file ends in <strong>.gguf</strong> and sits <strong>directly in <code>models</code></strong> (not inside <code>nllb</code> or any subfolder). Pick a size your GPU can load. The three files listed further down are a <strong>curated, tested starter set</strong> \u2014 strong multilingual instruction models for reasoning, rephrasing, and extra language help next to your speech translation pipeline.',
   llm_tip_h: '\uD83D\uDCA1 Do I need all three at once?',
   llm_tip_p: '<strong>No.</strong> You get the full trio so you can <strong>choose the best fit for your GPU</strong>: a featherweight option for tight VRAM, a balanced mid-size model, and a larger checkpoint when you want maximum quality. Install all files, then pick the one you want inside S2S \u2014 the others stay on disk for when you upgrade hardware or switch workloads. <strong>Your own <code>.gguf</code> files</strong> appear in the same list once they sit in <code>models</code>.',
-  llm_list_intro: 'Recommended bundle \u2014 three files (download separately or all from one link)',
+  llm_list_intro: 'Recommended bundle \u2014 three .gguf files inside one zip (from the link below)',
   llm_f1: '<code style="color:var(--accent-secondary);">Qwen3.5-0.8B.q8_0.gguf</code> \u2014 <strong>Smallest &amp; fastest.</strong> Qwen3.5 in a tiny footprint: great when VRAM is limited or you want instant responses.',
   llm_f2: '<code style="color:var(--accent-secondary);">Ministral-3-3B-Instruct-2512.Q6_K_H.gguf</code> \u2014 <strong>Sweet spot.</strong> Ministral instruct tuning with <strong>excellent multilingual coverage</strong> \u2014 the workhorse most people run day to day.',
   llm_f3: '<code style="color:var(--accent-secondary);">qwen2.5-7b-instruct-q4_k_m.gguf</code> \u2014 <strong>Heaviest hitter.</strong> Qwen2.5 7B at solid quantization: reach for this when you have headroom and want the richest answers.',
-  llm_dl_btn: '\u2B07 Download 3 LLMs (loose .gguf files \u2014 ~8.1 GB total)',
+  llm_dl_btn: '\u2B07 Download LLM pack (zip with 3 .gguf files \u2014 ~8.1 GB)',
   llm_install_h: '\uD83D\uDCC2 Installation (takes about a minute)',
   llm_install_highlight: 'Put <strong>every</strong> LLM checkpoint <strong>only</strong> in the <code>models</code> folder \u2014 <strong>not</strong> inside <code>models\\nllb</code> or any other subfolder. Applies to our bundle <strong>and</strong> any other <code>.gguf</code> you add.',
-  llm_install_p: 'For this bundle you get <strong>three separate .gguf files</strong>: move each into <code>S2S_Portable\\models\\</code> (next to the app). No extraction step. Keep these <strong>exact filenames</strong> so you know which is which. <strong>Any other multilingual <code>.gguf</code></strong> you download elsewhere goes in the <strong>same folder</strong> with the same rules \u2014 if S2S can load it on your GPU, it will show up in the model picker.',
+  llm_install_p: 'Extract <code>TransferXL-08hVyzVmSkBJp.zip</code> (or whatever name your browser saved). Move <strong>each</strong> of the three <code>.gguf</code> files into <code>S2S_Portable\\models\\</code> next to the app \u2014 <strong>not</strong> inside subfolders. Keep these <strong>exact filenames</strong>. <strong>Any other multilingual <code>.gguf</code></strong> you download elsewhere goes in the <strong>same folder</strong> with the same rules \u2014 if S2S can load it on your GPU, it will show up in the model picker.',
   llm_install_note: 'If S2S was open, close and reopen it once so the new checkpoints show up in the model picker.',
   llm_lic_note: 'Each weight file remains under its <strong>original open license</strong> (for example Apache&nbsp;2.0 or Mistral\u2019s terms). You are responsible for using them in line with those licenses <strong>and</strong> with your S2S license tier (personal vs commercial). When in doubt, prefer the smaller Qwen checkpoints for experimentation and keep commercial workflows aligned with your agreement.',
   oss_title_inner: 'Open-Source Components &amp; Licenses',
@@ -881,9 +883,10 @@ EN: {
   dl_c5: 'I will download NLLB models separately (instructions above)',
   dl_main_btn: '\u2B07 Download S2S Portable v5.0 (~37 GB)',
   dl_nllb_btn: '\u2B07 Download NLLB Translation Models (~5.1 GB)',
-  dl_llm_btn: '\u2B07 Download LLM pack (3 loose .gguf files \u2014 ~8.1 GB)',
+  dl_llm_btn: '\u2B07 Download LLM pack (zip with 3 .gguf files \u2014 ~8.1 GB)',
   dl_file: 'Download', dl_size: 'Size', dl_app: 'S2S Portable v5.0',
-  dl_nllb: 'NLLB Models (all 3)', dl_llm: 'LLM pack (3 GGUF models)', dl_total: 'Total',
+  dl_nllb: 'NLLB Models (all 3)', dl_llm: 'LLM pack (3 GGUF models, 1 zip)', dl_total: 'Total',
+  dl_transferxl_hint: '<strong>Typical TransferXL save names:</strong> <code>TransferXL-08jfVgVPbVyD50.zip</code> = S2S Portable app (~37 GB). <code>TransferXL-08hVyzVmSkBJp.zip</code> = optional LLM pack (three <code>.gguf</code> files inside \u2014 extract first; ~8.1 GB). Your browser\u2019s filename may differ slightly; the ID in the middle matches these official links.',
   footer_tag: 'Breaking language barriers, one USB stick at a time.',
   footer_home: 'Home', footer_manual: 'Manual', footer_donate: 'Donate',
   footer_discord: 'Discord Community',
