@@ -390,6 +390,7 @@
                 <tr><th data-i18n="req_when">When</th><th data-i18n="req_needed">Needed?</th></tr>
                 <tr><td data-i18n="req_dl">Downloading S2S</td><td data-i18n="req_dl_v">Yes (~25 GB one-time)</td></tr>
                 <tr><td data-i18n="req_nllb_dl">Downloading NLLB</td><td data-i18n="req_nllb_dl_v">Yes (~5 GB one-time)</td></tr>
+                <tr><td data-i18n="req_llm_dl">Downloading LLM bundle (optional)</td><td data-i18n="req_llm_dl_v">Yes (~8&ndash;10 GB one-time)</td></tr>
                 <tr><td data-i18n="req_run">Running S2S</td><td data-i18n="req_run_v">&#x274C; No &mdash; 100% offline</td></tr>
                 <tr><td data-i18n="req_updates">Updates</td><td data-i18n="req_updates_v">Internet for download only</td></tr>
             </table>
@@ -485,6 +486,44 @@ S2S_Portable\
         <p data-i18n="nllb_lic_p">These models are based on Meta AI's NLLB-200 and licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color:var(--accent-secondary);">CC-BY-NC-4.0</a>. They may only be used for personal, non-commercial purposes. For commercial translation, S2S Portable supports Qwen3 (Apache 2.0 &mdash; full commercial use permitted).</p>
         <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.5rem;" data-i18n="nllb_lic_attr">Attribution: NLLB Team et al., &ldquo;No Language Left Behind: Scaling Human-Centered Machine Translation,&rdquo; Meta AI, 2022. Models converted to CTranslate2 int8 format.</p>
     </div>
+
+    <hr class="divider">
+
+    <!-- ============================================================ -->
+    <!-- SECTION 4B: OPTIONAL MULTILINGUAL LLM BUNDLE (GGUF) -->
+    <!-- ============================================================ -->
+    <h2 id="llms">&#x1F4DA; <span class="accent" data-i18n="llm_title_inner">Multilingual LLM Pack (Optional &mdash; Single Download)</span></h2>
+
+    <div class="info-box">
+        <strong data-i18n="llm_compat_h">&#x2705; Built for S2S Portable</strong>
+        <p data-i18n="llm_compat_p">This archive bundles <strong>three</strong> GGUF models that are <strong>compatible with S2S Portable</strong> and its local LLM path. They are <strong>leading multilingual instruction models</strong> used for high-quality, many-language reasoning and chat-style tasks alongside your translation pipeline. One download contains all files below.</p>
+    </div>
+
+    <p data-i18n="llm_list_intro">Included in the bundle:</p>
+    <ul style="color:var(--text-muted);line-height:1.7;max-width:42rem;">
+        <li data-i18n="llm_f1"><code style="color:var(--accent-secondary);">Qwen3.5-0.8B.q8_0.gguf</code> &mdash; compact Qwen3.5, excellent speed/size for lighter GPUs.</li>
+        <li data-i18n="llm_f2"><code style="color:var(--accent-secondary);">Ministral-3-3B-Instruct-2512.Q6_K_H.gguf</code> &mdash; Mistral-family instruct model, strong multilingual coverage.</li>
+        <li data-i18n="llm_f3"><code style="color:var(--accent-secondary);">qwen2.5-7b-instruct-q4_k_m.gguf</code> &mdash; larger Qwen2.5 instruct checkpoint for maximum quality when VRAM allows.</li>
+    </ul>
+
+    <div style="text-align:center;margin:1.5rem 0;">
+        <a href="https://www.transferxl.com/download/REPLACE_LLMS_BUNDLE_ID" class="btn btn-secondary" data-download="llms"><span data-i18n="llm_dl_btn">&#x2B07; Download all 3 LLMs (one archive &mdash; ~8&ndash;10 GB)</span></a>
+    </div>
+
+    <div class="card">
+        <h3 data-i18n="llm_install_h">&#x1F4C2; Installation</h3>
+        <p data-i18n="llm_install_p">Extract the archive and copy the <strong>.gguf</strong> files into your S2S <code>models</code> folder (same folder S2S scans for GGUF models):</p>
+        <div class="code-block">
+S2S_Portable\
+  models\
+    Qwen3.5-0.8B.q8_0.gguf
+    Ministral-3-3B-Instruct-2512.Q6_K_H.gguf
+    qwen2.5-7b-instruct-q4_k_m.gguf
+        </div>
+        <p style="color:var(--text-muted);font-size:0.85rem;" data-i18n="llm_install_note">Restart S2S if it is already running so the new files appear in the model list.</p>
+    </div>
+
+    <p style="font-size:0.85rem;color:var(--text-muted);" data-i18n="llm_lic_note">Licensing follows each model&rsquo;s original terms (e.g. Apache 2.0 / Mistral license). Use only in compliance with those licenses and your S2S license tier.</p>
 
     <hr class="divider">
 
@@ -638,6 +677,7 @@ S2S_Portable\
         <div style="display:flex;flex-direction:column;gap:1rem;align-items:center;">
             <a href="https://www.transferxl.com/download/08jfVgVPbVyD50" class="btn btn-primary" style="font-size:1.2rem;padding:1rem 3rem;" data-download="s2s"><span data-i18n="dl_main_btn">&#x2B07; Download S2S Portable v5.0 (~25 GB)</span></a>
             <a href="https://www.transferxl.com/download/08vs5TdPL09tgM" class="btn btn-secondary" data-download="nllb"><span data-i18n="dl_nllb_btn">&#x2B07; Download NLLB Translation Models (~5.1 GB)</span></a>
+            <a href="https://www.transferxl.com/download/REPLACE_LLMS_BUNDLE_ID" class="btn btn-secondary" data-download="llms"><span data-i18n="dl_llm_btn">&#x2B07; Download LLM pack (3 GGUFs, one archive &mdash; ~8&ndash;10 GB)</span></a>
         </div>
 
         <div style="margin-top:2rem;">
@@ -645,7 +685,8 @@ S2S_Portable\
                 <tr><th data-i18n="dl_file">Download</th><th data-i18n="dl_size">Size</th></tr>
                 <tr><td data-i18n="dl_app">S2S Portable v5.0</td><td>~25 GB</td></tr>
                 <tr><td data-i18n="dl_nllb">NLLB Models (all 3)</td><td>~5.1 GB</td></tr>
-                <tr><td style="color:white;font-weight:bold;" data-i18n="dl_total">Total</td><td style="color:white;font-weight:bold;">~30 GB</td></tr>
+                <tr><td data-i18n="dl_llm">LLM pack (3 GGUF models)</td><td>~8&ndash;10 GB</td></tr>
+                <tr><td style="color:white;font-weight:bold;" data-i18n="dl_total">Total</td><td style="color:white;font-weight:bold;">~38&ndash;40 GB</td></tr>
             </table>
         </div>
     </div>
@@ -698,9 +739,12 @@ const LANGS = [
 
 const DOWNLOAD_HREF_S2S = 'https://www.transferxl.com/download/08jfVgVPbVyD50';
 const DOWNLOAD_HREF_NLLB = 'https://www.transferxl.com/download/08vs5TdPL09tgM';
+// After uploading the single zip with all 3 .gguf files to TransferXL, paste the full download URL here:
+const DOWNLOAD_HREF_LLMS = 'https://www.transferxl.com/download/REPLACE_LLMS_BUNDLE_ID';
 function applyDownloadHrefs() {
     document.querySelectorAll('a[data-download="s2s"]').forEach(function (a) { a.href = DOWNLOAD_HREF_S2S; });
     document.querySelectorAll('a[data-download="nllb"]').forEach(function (a) { a.href = DOWNLOAD_HREF_NLLB; });
+    document.querySelectorAll('a[data-download="llms"]').forEach(function (a) { a.href = DOWNLOAD_HREF_LLMS; });
 }
 
 const I18N = {
@@ -724,6 +768,7 @@ EN: {
   req_net_h: 'Internet', req_when: 'When', req_needed: 'Needed?',
   req_dl: 'Downloading S2S', req_dl_v: 'Yes (~25 GB one-time)',
   req_nllb_dl: 'Downloading NLLB', req_nllb_dl_v: 'Yes (~5 GB one-time)',
+  req_llm_dl: 'Downloading LLM bundle (optional)', req_llm_dl_v: 'Yes (~8\u201310 GB one-time)',
   req_run: 'Running S2S', req_run_v: '\u274C No \u2014 100% offline',
   req_updates: 'Updates', req_updates_v: 'Internet for download only',
   req_offline_h: '\u2705 Fully Offline After Setup',
@@ -749,6 +794,18 @@ EN: {
   nllb_lic_h: '\u26A0 License: CC-BY-NC-4.0 (Non-Commercial)',
   nllb_lic_p: 'These models are based on Meta AI\'s NLLB-200 and licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/" style="color:var(--accent-secondary);">CC-BY-NC-4.0</a>. They may only be used for personal, non-commercial purposes. For commercial translation, S2S Portable supports Qwen3 (Apache 2.0 \u2014 full commercial use permitted).',
   nllb_lic_attr: 'Attribution: NLLB Team et al., \u201CNo Language Left Behind: Scaling Human-Centered Machine Translation,\u201D Meta AI, 2022. Models converted to CTranslate2 int8 format.',
+  llm_title_inner: 'Multilingual LLM Pack (Optional \u2014 Single Download)',
+  llm_compat_h: '\u2705 Built for S2S Portable',
+  llm_compat_p: 'This archive bundles <strong>three</strong> GGUF models that are <strong>compatible with S2S Portable</strong> and its local LLM path. They are <strong>leading multilingual instruction models</strong> used for high-quality, many-language reasoning and chat-style tasks alongside your translation pipeline. One download contains all files below.',
+  llm_list_intro: 'Included in the bundle:',
+  llm_f1: '<code style="color:var(--accent-secondary);">Qwen3.5-0.8B.q8_0.gguf</code> \u2014 compact Qwen3.5, excellent speed/size for lighter GPUs.',
+  llm_f2: '<code style="color:var(--accent-secondary);">Ministral-3-3B-Instruct-2512.Q6_K_H.gguf</code> \u2014 Mistral-family instruct model, strong multilingual coverage.',
+  llm_f3: '<code style="color:var(--accent-secondary);">qwen2.5-7b-instruct-q4_k_m.gguf</code> \u2014 larger Qwen2.5 instruct checkpoint for maximum quality when VRAM allows.',
+  llm_dl_btn: '\u2B07 Download all 3 LLMs (one archive \u2014 ~8\u201310 GB)',
+  llm_install_h: '\uD83D\uDCC2 Installation',
+  llm_install_p: 'Extract the archive and copy the <strong>.gguf</strong> files into your S2S <code>models</code> folder (same folder S2S scans for GGUF models):',
+  llm_install_note: 'Restart S2S if it is already running so the new files appear in the model list.',
+  llm_lic_note: 'Licensing follows each model\u2019s original terms (e.g. Apache 2.0 / Mistral license). Use only in compliance with those licenses and your S2S license tier.',
   oss_title_inner: 'Open-Source Components &amp; Licenses',
   oss_intro: 'S2S Portable is built with the following open-source technologies. We respect all licenses and give full credit to the original authors.',
   oss_comp: 'Component', oss_lic: 'License', oss_comm: 'Commercial Use',
@@ -792,8 +849,9 @@ EN: {
   dl_c5: 'I will download NLLB models separately (instructions above)',
   dl_main_btn: '\u2B07 Download S2S Portable v5.0 (~25 GB)',
   dl_nllb_btn: '\u2B07 Download NLLB Translation Models (~5.1 GB)',
+  dl_llm_btn: '\u2B07 Download LLM pack (3 GGUFs, one archive \u2014 ~8\u201310 GB)',
   dl_file: 'Download', dl_size: 'Size', dl_app: 'S2S Portable v5.0',
-  dl_nllb: 'NLLB Models (all 3)', dl_total: 'Total',
+  dl_nllb: 'NLLB Models (all 3)', dl_llm: 'LLM pack (3 GGUF models)', dl_total: 'Total',
   footer_tag: 'Breaking language barriers, one USB stick at a time.',
   footer_home: 'Home', footer_manual: 'Manual', footer_donate: 'Donate',
   footer_discord: 'Discord Community',
